@@ -1,0 +1,53 @@
+{
+  "name": "ipimpat/bootstream",
+  "description": "A Laravel 9 package that replaces Laravel Jetstream's TailwindCSS based Inertia stack with a Bootstrap 5.2 based Inertia stack.",
+  "keywords": ["laravel", "bootstrap", "jetstream", "inertiajs", "vuejs"],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/ipimpat/bootstream/issues",
+    "source": "https://github.com/ipimpat/bootstream"
+  },
+  "authors": [
+    {
+      "name": "Kim Henriksen",
+      "email": "kh@ipimp.at",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/support": "^9.0"
+  },
+  "require-dev": {
+    "inertiajs/inertia-laravel": "^0.6.3",
+    "laravel/jetstream": "^2.13",
+    "orchestra/testbench": "^7.17",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ipimpat\\Bootstream\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Ipimpat\\Bootstream\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Ipimpat\\Bootstream\\BootstreamServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "tests": "vendor/bin/phpunit",
+    "testsVerbose": "@tests -vvv"
+  }
+}
