@@ -6,7 +6,7 @@
 
 ## Description
 
-Bootstream is a Laravel 9 package that replaces Laravel Jetstream's TailwindCSS based Inertia stack with a Bootstrap 5.2 based Inertia stack.
+Bootstream is a package for Laravel 9 and 10 that replaces Laravel Jetstream's TailwindCSS based Inertia stack with a Bootstrap 5.2 based Inertia stack.
 
 ## Table of Content
 
