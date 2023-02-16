@@ -69,7 +69,7 @@ const confirmLeavingTeam = () => {
 };
 
 const leaveTeam = () => {
-    leaveTeamForm.delete(route('team-members.destroy', [props.team, usePage().props.user]));
+    leaveTeamForm.delete(route('team-members.destroy', [props.team, usePage().props.auth.user]));
 };
 
 const confirmTeamMemberRemoval = (teamMember) => {
@@ -263,7 +263,7 @@ const displayableRole = (role) => {
 
                                 <!-- Leave Team -->
                                 <button
-                                    v-if="$page.props.user.id === user.id"
+                                    v-if="$page.props.auth.user.id === user.id"
                                     class="btn btn-link text-danger text-decoration-none ms-5"
                                     @click="confirmLeavingTeam"
                                 >

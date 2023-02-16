@@ -54,7 +54,7 @@ const logout = () => {
                         <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="end">
                             <template #trigger>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    {{ $page.props.user.current_team.name }}
+                                    {{ $page.props.auth.user.current_team.name }}
                                     <i class="bi bi-chevron-expand ms-2 pt-1"></i>
                                 </div>
                             </template>
@@ -67,7 +67,7 @@ const logout = () => {
                                     </li>
 
                                     <!-- Team Settings -->
-                                    <DropdownLink :href="route('teams.show', $page.props.user.current_team)" :active="route().current('teams.show', $page.props.user.current_team)">
+                                    <DropdownLink :href="route('teams.show', $page.props.auth.user.current_team)" :active="route().current('teams.show', $page.props.auth.user.current_team)">
                                         Team Settings
                                     </DropdownLink>
 
@@ -82,11 +82,11 @@ const logout = () => {
                                         <div class="dropdown-header">Switch Teams</div>
                                     </li>
 
-                                    <template v-for="team in $page.props.user.all_teams" :key="team.id">
+                                    <template v-for="team in $page.props.auth.user.all_teams" :key="team.id">
                                         <form @submit.prevent="switchToTeam(team)">
                                             <DropdownLink as="button">
                                                 <div class="d-flex align-items-center">
-                                                    <i v-if="team.id == $page.props.user.current_team_id" class="bi bi-check-circle me-2 text-success"></i>
+                                                    <i v-if="team.id == $page.props.auth.user.current_team_id" class="bi bi-check-circle me-2 text-success"></i>
                                                     {{ team.name }}
                                                 </div>
                                             </DropdownLink>
@@ -103,11 +103,11 @@ const logout = () => {
                                     v-if="$page.props.jetstream.managesProfilePhotos"
                                     class="rounded-circle pb-1"
                                     style="width:2rem; height:2rem"
-                                    :src="$page.props.user.profile_photo_url"
-                                    :alt="$page.props.user.name"
+                                    :src="$page.props.auth.user.profile_photo_url"
+                                    :alt="$page.props.auth.user.name"
                                 />
                                 <div v-else class="d-flex justify-content-between align-items-center">
-                                    {{ $page.props.user.name }}
+                                    {{ $page.props.auth.user.name }}
                                     <i class="bi bi-chevron-down ms-2 pt-1"></i>
                                 </div>
                             </template>

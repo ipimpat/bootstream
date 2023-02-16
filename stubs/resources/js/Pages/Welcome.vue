@@ -17,7 +17,7 @@ defineProps({
             <div class="col-12">
                 <div class="d-flex justify-content-end">
                     <div>
-                        <Link v-if="$page.props.user" :href="route('dashboard')" class="text-muted">Dashboard</Link>
+                        <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="text-muted">Dashboard</Link>
 
                         <template v-else>
                             <Link :href="route('login')" class="text-muted">Log in</Link>
