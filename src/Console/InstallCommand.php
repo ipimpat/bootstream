@@ -51,6 +51,7 @@ class InstallCommand extends Command
                 '@popperjs/core' => '^2.11.6',
                 'bootstrap' => '^5.2.3',
                 'bootstrap-icons' => '^1.10.2',
+                'lodash' => '^4.17.19',
                 'sass' => '^1.57.1',
             ] + $packages;
         });
