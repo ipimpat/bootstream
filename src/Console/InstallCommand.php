@@ -61,11 +61,16 @@ class InstallCommand extends Command
             (new Filesystem)->delete(base_path('tailwind.config.js'));
         }
 
+        // Remove postcss configuration...
+        if ((new Filesystem)->exists(base_path('postcss.config.js'))) {
+            (new Filesystem)->delete(base_path('postcss.config.js'));
+        }
+
         // Remove CSS directory
         (new Filesystem)->deleteDirectory(resource_path('css'));
 
         // Build configurations..
-        copy(__DIR__.'/../../stubs/postcss.config.js', base_path('postcss.config.js'));
+        copy(__DIR__.'/../../stubs/postcss.config.cjs', base_path('postcss.config.cjs'));
         copy(__DIR__.'/../../stubs/vite.config.js', base_path('vite.config.js'));
 
         // Blade views...
